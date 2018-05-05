@@ -1,0 +1,33 @@
+{
+  "name": "create-mario-app",
+  "version": "1.0.0",
+  "description": "create mario app ",
+  "bin": {
+    "mario-bin": "bin/mario-init.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skybjf/create-mario-app.git"
+  },
+  "keywords": [
+    "create",
+    "mario",
+    "app",
+    "node"
+  ],
+  "author": "bujiangfeng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skybjf/create-mario-app/issues"
+  },
+  "homepage": "https://github.com/skybjf/create-mario-app#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "color-command": "^1.0.0",
+    "commander": "^2.15.1"
+  }
+}

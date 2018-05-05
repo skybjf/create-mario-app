@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <title>Hello</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+    出席会议的有：
+    {% for one in user %}
+    <p>{{ one.username }}</p>
+    {% endfor %}
+    <button class="btn1">添加</button>
+    <button class="btn2">删除</button>
+    <button class="btn3">修改</button>
+    <button class="btn4">查询</button>
+    <script src="//cdnjs.gtimg.com/cdnjs/libs/jquery/2.1.1-rc2/jquery.min.js"></script>
+    <script>
+        $(function () {
+            var event = {
+                // 查询
+                get: function () {
+                    $.ajax({
+                        url: "/user/1", 
+                        success: function (result) {
+                            console.log(result);
+                        }
+                    });
+                },
+                // 删除
+                del: function () {
+                    $.ajax({
+                        type:'delete',
+                        url: "/user/1", 
+                        success: function (result) {
+                            console.log(result);
+                        }
+                    });
+                },
+                // 增加
+                post: function () {
+                    $.ajax({
+                        type:'post',
+                        url: "/user", 
+                        data:{
+                            aa:456789,
+                        },
+                        dataType:'json',
+                        success: function (result) {
+                            console.log(result);
+                        }
+                    });
+                },
+                // 修改
+                put: function () {
+                    $.ajax({
+                        type:'put',
+                        url: "/user/1", 
+                        success: function (result) {
+                            console.log(result);
+                        }
+                    });
+                },
+            }
+            
+            
+            $('.btn1').on('click',event.post);
+            $('.btn2').on('click',event.del);
+            $('.btn3').on('click',event.put);
+            $('.btn4').on('click',event.get);
+        })
+    </script>
+</body>
+
+</html>
